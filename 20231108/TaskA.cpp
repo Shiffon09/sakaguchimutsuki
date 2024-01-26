@@ -1,4 +1,6 @@
 #include <iostream>
+#include <algorithm>
+#include <random>
 
 int main()
 {
@@ -10,6 +12,17 @@ int main()
     {
         std::cout << myArray[i] << " ";
     }
+
+     std::random_device rd;
+     std::mt19937 g(rd());
      
+     std::shuffle(std::begin(myArray), std::end(myArray),g);
+     
+std::cout << "Array after shuffle";
+    for (int i = 0; i < arraySize; ++i)
+    {
+        std::cout << myArray[i] << " ";
+    }
+
      return 0;
 }
